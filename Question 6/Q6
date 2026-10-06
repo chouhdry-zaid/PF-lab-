@@ -1,0 +1,17 @@
+#include<stdio.h>
+int main( ) {
+	int num, last_num=0, even=0, odd=0;
+	printf("enter the units you consumed");
+	scanf("%d",&num);
+	for(int i =0; i>0 ; i++){
+		last_num = num%10;
+		num = num/10;
+		if(last_num%2==0){
+			even++;
+		}else
+		odd++;
+		
+		
+	}
+	printf("%d are even numbers and %d are odd",even,odd);
+}
