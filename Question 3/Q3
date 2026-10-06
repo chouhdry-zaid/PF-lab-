@@ -1,0 +1,21 @@
+#include<stdio.h>
+int main() {
+    int attendence,present=15,absent=15;
+    for (int i = 0; i < 15; i++)
+    {
+        printf("1-for-Present/0-for-Absent:");
+        scanf("%d",&attendence);
+        if (attendence ==1)
+        {
+            present++;
+            absent--;
+        }else{
+            absent++;
+            present--;
+        }
+        
+        /* code */
+    }
+    printf("present students are:%d and absent are:%d",present,absent);
+    
+}
