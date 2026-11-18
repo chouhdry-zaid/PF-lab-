@@ -1,14 +1,20 @@
+
 #include<stdio.h>
-int sumDigits(int n){
-    if(n==0){
-        return 0;
+int calculateChecksum(int transactionID){
+    if(transactionID<10){
+        return transactionID;
     }
-    return n%10+sumDigits(n/10);
+    int sum=0;
+    while(transactionID>0){
+        sum=sum+transactionID%10;
+        transactionID=transactionID/10;
+    }
+    return calculateChecksum(sum);
 }
 int main(){
-    int num;
-    printf("Enter a number: ");
-    scanf("%d",&num);
-    printf("Sum of digits of %d is %d\n",num,sumDigits(num));
+    int id;
+    printf("Enter transaction ID: ");
+    scanf("%d",&id);
+    printf("Checksum of %d is %d\n",id,calculateChecksum(id));
     return 0;
 }
