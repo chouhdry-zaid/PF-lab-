@@ -1,25 +1,22 @@
 #include<stdio.h>
-struct Product{
-    int id;
-    char name[50];
-    char category[50];
-    float price;
-    int stock;
+struct Address{
+    char City[50];
+    int ZipCode;
+    char State[50];
 };
-void displayProductDetails(struct Product p){
-    float finalPrice=p.price-p.price*5/100;
-    printf("ID: %d\n",p.id);
-    printf("Name: %s\n",p.name);
-    printf("Category: %s\n",p.category);
-    printf("Original Price: %.2f\n",p.price);
-    printf("Stock: %d\n",p.stock);
-    printf("Final Price after 5%% discount: %.2f\n",finalPrice);
-}
+struct Student{
+    int RollNo;
+    char Name[50];
+    float CGPA;
+    struct Address studentAddress;
+};
 int main(){
-    struct Product p1={101,"Laptop","Electronics",85000,10};
-    struct Product p2={102,"Headphones","Accessories",4500,25};
-    displayProductDetails(p1);
-    printf("\n");
-    displayProductDetails(p2);
+    struct Student student1={1,"Ahmed",3.5,{"Karachi",75300,"Sindh"}};
+    printf("Roll No: %d\n",student1.RollNo);
+    printf("Name: %s\n",student1.Name);
+    printf("CGPA: %.2f\n",student1.CGPA);
+    printf("City: %s\n",student1.studentAddress.City);
+    printf("Zip Code: %d\n",student1.studentAddress.ZipCode);
+    printf("State: %s\n",student1.studentAddress.State);
     return 0;
 }
